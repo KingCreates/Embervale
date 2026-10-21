@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#12101a">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon.svg">
+<title>Emberfall Vale</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+html,body{margin:0;height:100%;background:#12101a;color:#eee;font-family:ui-monospace,Menlo,monospace;touch-action:none;overflow:hidden;overscroll-behavior:none}
+#wrap{display:flex;flex-direction:column;height:100%;align-items:center;justify-content:space-between;padding:env(safe-area-inset-top) 6px calc(env(safe-area-inset-bottom) + 8px)}
+#screen{position:relative;width:min(100vw,calc(100vh - 210px),640px);aspect-ratio:1;margin-top:4px;flex:none}
+canvas{width:100%;height:100%;image-rendering:pixelated;background:#000;border:2px solid #3b3560;border-radius:6px;display:block}
+#panel{display:none;position:absolute;inset:0;background:rgba(12,10,24,.99);border-radius:6px;padding:12px;overflow:auto;font-size:13px;line-height:1.4;touch-action:pan-y}
+#panel h2{margin:6px 0;color:#ffb43a}#panel h3{margin:4px 0 8px;color:#ffe9a0}#panel p{margin:8px 0}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pb,.tab{font:inherit;color:#fff;background:#3b3560;border:0;border-radius:8px;padding:9px 14px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}.tab{padding:6px 8px;font-size:12px;text-transform:capitalize}.tab.on{background:#a3392b}
+.list{margin-top:8px}.row{display:flex;justify-content:space-between;gap:8px;padding:7px 8px;margin:3px 0;background:#241f3a;border-radius:6px}
+.row small{display:block;color:#9a98b8;font-size:11px}.sub{margin:8px 0 2px;color:#ffe9a0;text-transform:capitalize}.gold{float:right;color:#ffd45a}
+#pad{display:flex;width:100%;max-width:640px;justify-content:space-between;align-items:center;padding:0 10px;flex:none}
+#dpad{display:grid;grid-template-columns:repeat(3,58px);grid-template-rows:repeat(3,58px);gap:3px}
+button{touch-action:none}
+#dpad button,.ab{font-size:22px;border:0;border-radius:14px;background:#3b3560;color:#fff}
+#dpad button:active,.ab:active{background:#6a5fb0}
+#btns{display:grid;grid-template-columns:auto auto;gap:8px;align-items:center;justify-items:center}
+.ab{width:56px;height:56px;font-size:15px}#act{width:84px;height:84px;border-radius:50%;background:#a3392b;font-size:20px;grid-row:span 2}#skill{background:#2d5fa3}
+.sm{width:44px;height:36px;font-size:15px}
+</style></head><body><div id="wrap">
+<div id="screen"><canvas id="c" width="240" height="240"></canvas><div id="panel"></div></div>
+<div id="pad"><div id="dpad">
+<span></span><button data-d="up">▲</button><span></span>
+<button data-d="left">◀</button><span></span><button data-d="right">▶</button>
+<span></span><button data-d="down">▼</button><span></span></div>
+<div id="btns"><button class="ab" id="skill">B</button><button class="ab" id="act">A</button>
+<div style="display:flex;gap:6px"><button class="ab sm" id="cyc">⟳</button><button class="ab sm" id="menu">☰</button></div></div></div></div>
+<script src="web/data.js"></script><script src="web/game.js"></script></body></html>
