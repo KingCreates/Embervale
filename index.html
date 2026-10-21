@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Emberfall Vale</title>
+<style>
+html,body{margin:0;height:100%;background:#12101a;color:#eee;font-family:sans-serif;touch-action:none;overflow:hidden}
+#wrap{display:flex;flex-direction:column;height:100%;align-items:center;justify-content:center}
+canvas{background:#000;image-rendering:pixelated;max-width:100%;max-height:70vh;aspect-ratio:1}
+#pad{display:flex;gap:30px;margin-top:10px;align-items:center}
+#dpad{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(3,56px);gap:4px}
+button{font-size:22px;border:0;border-radius:12px;background:#3b3560;color:#fff;touch-action:none}
+#act{width:90px;height:90px;border-radius:50%;background:#a3392b}
+</style></head><body><div id="wrap">
+<canvas id="c" width="320" height="320"></canvas>
+<div id="pad"><div id="dpad">
+<span></span><button data-d="up">▲</button><span></span>
+<button data-d="left">◀</button><span></span><button data-d="right">▶</button>
+<span></span><button data-d="down">▼</button><span></span></div>
+<button id="act">Act</button></div></div>
+<script src="web/game.js"></script></body></html>
